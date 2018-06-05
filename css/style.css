@@ -1,0 +1,48 @@
+header{
+    height: 50px;
+
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+
+main{
+    margin: auto;
+    width: 1000px;
+}
+
+
+img, div[class], div[id]{
+    height: 225px;
+    width: 150px;
+
+}
+
+img{
+    position: absolute;
+
+}
+
+.back{
+    z-index: 1;
+    transition: all 1s ease-in-out;
+
+}
+
+.back:active {
+    transform: rotate(360deg) scale(0,0);
+    opacity:0;
+
+}
+
+div[class]{
+    display: inline;
+}
+
+div[id]{
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
