@@ -1,4 +1,4 @@
-header{
+/header{
     height: 50px;
 
 }
@@ -10,9 +10,9 @@ h1{
 
 main{
     margin: auto;
-    width: 1000px;
+    width: 1100px;
 }
-
+/*
 
 img, div[class], div[id]{
     height: 225px;
@@ -25,18 +25,32 @@ img{
 
 
 }
+.gne:active{
+    transform: scaleX(-1);
 
+}
 .back{
     z-index: 1;
-    /* transition: all 0.2s ease-in-out; */
+    /* animation: return 1s linear;
+    transition: all .4s linear;
     visibility: visible;
+}
+ @keyframes return {
+    from { scaleX:(0); opacity: 1}
+    50%    {    scaleX:(-1) opacity: 0  }
+    to {    scaleX:(-1)   opacity: 0 }
 }
 
 
 /* .back:active {
-    transform: rotate(360deg) scale(0,0);
+    transform: scaleX(-1);
     opacity:0;
 } */
+
+/*
+.active{
+    visibility: hidden;
+}
 
 div[class]{
     display: inline;
@@ -47,3 +61,4 @@ div[id]{
     display: inline-block;
     margin: 5px;
 }
+*/
