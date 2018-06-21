@@ -1,58 +1,93 @@
-var main = document.getElementsByTagName("main")[0];
-var divBack = document.createElement("div");
-var divFace = document.createElement("div");
-divBack.style.display = "flex";
-divFace.style.display = "flex";
-divBack.style.position = "absolute";
-divFace.style.position = "absolute";
-divBack.style.margin = "1%";
-divFace.style.margin = "1%";
-divBack.style.flexWrap = "wrap";
-divFace.style.flexWrap = "wrap";
-
-// div.className = "back";
-main.appendChild(divBack);
-main.appendChild(divFace);
-main.style.position = "relative";
-
-var arenaCards = [];
-
-var nbCard = prompt("enter nombres cartes paire !");7
-
-while (nbCard %2){
-    nbCard = prompt("PAIRE MOTHERFUCKER!!!!!");
-
-}
-
-for (var i = 0; i < nbCard; i++) {
-    cards = document.createElement("img");
-    divBack.appendChild(cards);
-    cards.className = "back";
-    cards.style.width = "160px";
-    cards.style.height = "240px";
-    cards.src="Img/6.jpg";
-    cards.style.margin = "10px";
-
-}
-
-for (var i = 0; i < nbCard; i++) {
-    cardsFace = document.createElement("img");
-    divFace.appendChild(cardsFace);
-    cardsFace.className = "front";
-    cardsFace.style.width = "160px";
-    cardsFace.style.height = "240px";
-                                cardsFace.src = "/Img/alban.png"
-    cardsFace.style.margin = "10px";
-
-    cardsFace.style.opacity = "0"
-}
 
 
-for (var i = 0; i < nbCard; i++) {
+$(document).ready(function(){
 
-    this.addEventListener("click", flip);
+    var divBack = $("<div>")
+    var divFace = $("<div>")
+    divBack.addClass("divBack")
+    divFace.addClass("divFace")
+    $("main").append(divBack);
+    $("main").append(divFace);
 
-    function flip() {
+    divBack.css({
+        "display":"flex",
+        "position": "absolute",
+        "margin": "1%",
+        "flexWrap":"wrap",
+    })
+
+    divFace.css({
+        "display":"flex",
+        "position": "absolute",
+        "margin": "1%",
+        "flexWrap":"wrap",
+    })
+
+    $("main").css("position","relative")
+
+
+
+    var nbCard = prompt("enter nombres cartes paire !");
+
+    while (nbCard %2){
+        nbCard = prompt("PAIRE MOTHERFUCKER!!!!!");
+    }
+
+    for(var i = 0; i< nbCard; i++){
+        var cards = $("<img>")
+        $(divBack).append(cards)
+        cards.css({
+                "width": "160px",
+                "height": "240px",
+                "margin": "10px"
+        }).attr("src","Img/6.jpg").addClass("back")
+
+    }
+
+
+
+    var srcImg = ["Img/alban.png","Img/alex.jpg","Img/aurelie.jpg","Img/caro.jpg","Img/dimitri.jpg","Img/dorian.jpg","Img/fabien.jpg","Img/gaetan.png","Img/hermelen.jpg","Img/jb.jpg","Img/jd.jpg","Img/mika.jpg","Img/perrine.jpg","Img/quent.jpg","Img/thomas.jpg","Img/tibau.jpg","Img/tibausensei.png","Img/yann.jpg"];
+
+
+
+    for(var i = 0; i< nbCard/2; i++){
+        var randomImg = Math.floor(Math.random()*srcImg.length)
+
+        for( j = 0; j < 2; j++){
+            var cardsFace = $("<img>")
+            cardsFace.css({
+                "width": "160px",
+                "height": "240px",
+                "margin": "10px",
+                "opacity": "1",
+            }).attr("src",srcImg[randomImg]).addClass("front")
+            $(divFace).append(cardsFace)
+
+
+
+        }
+
+    }
+
+
+    // for (var i = 0; i < nbCard; i++) {
+    //     cardsFace = document.createElement("img");
+    //     divFace.appendChild(cardsFace);
+    //     cardsFace.className = "front";
+    //     cardsFace.style.width = "160px";
+    //     cardsFace.style.height = "240px";
+    //     cardsFace.src = "/Img/alban.png"
+    //     cardsFace.style.margin = "10px";
+    //
+    //     cardsFace.style.opacity = "0"
+    // }
+
+
+    for (var i = 0; i < nbCard; i++) {
+
+        this.addEventListener("click", flip);
+
+        function flip() {
 
             cardsFace.style.opacity = "1";
             // table.push(this.parentNode.id);
@@ -60,9 +95,24 @@ for (var i = 0; i < nbCard; i++) {
 
 
 
+        }
     }
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
 
 
 
